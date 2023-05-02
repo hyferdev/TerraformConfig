@@ -1,0 +1,53 @@
+# Define provider block for AWS
+provider "aws" {
+  region = "us-east-1" # replace with your preferred AWS region
+}
+
+# Create a new VPC
+resource "aws_vpc" "hyfer" {
+  cidr_block = "10.0.0.0/16" # replace with your preferred CIDR block
+
+  tags = {
+    Name = "hyfer-vpc-test"
+  }
+}
+
+# Create four subnets within the VPC
+resource "aws_subnet" "sales" {
+  vpc_id     = aws_vpc.hyfer.id
+  cidr_block = "10.0.1.0/24"
+  availability_zone = "us-east-1a"
+}
+
+resource "aws_subnet" "hr" {
+  vpc_id     = aws_vpc.hyfer.id
+  cidr_block = "10.0.2.0/24"
+  availability_zone = "us-east-1b"
+}
+
+resource "aws_subnet" "maitenance" {
+  vpc_id     = aws_vpc.hyfer.id
+  cidr_block = "10.0.3.0/24"
+  availability_zone = "us-east-1c"
+}
+
+resource "aws_subnet" "respiratory" {
+  vpc_id     = aws_vpc.hyfer.id
+  cidr_block = "10.0.4.0/24"
+  availability_zone = "us-east-1d"
+}
+
+# Output the VPC ID and subnet IDs
+output "vpc_id" {
+  value = aws_vpc.hyfer.id
+}
+
+output "subnet_ids" {
+  value = [
+    aws_subnet.sales.id,
+    aws_subnet.hr.id,
+    aws_subnet.respiratory.id,
+    aws_subnet.maitenance.id,
+  ]
+}
+
