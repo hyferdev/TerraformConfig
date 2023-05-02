@@ -1,14 +1,12 @@
-# Copyright (c) HashiCorp, Inc.
-# SPDX-License-Identifier: MPL-2.0
-
 terraform {
-
+	# edit this to match your terraform cloud configs
   cloud {
       organization = "hyfer"
       workspaces {
         name = "VPC"
       }
   }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
