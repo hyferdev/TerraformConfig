@@ -85,3 +85,4 @@ resource "aws_route_table_association" "my_rta_4" {
   subnet_id      = aws_subnet.my_subnet_4.id
   route_table_id = aws_route_table.priv_rt.id
 }
+
