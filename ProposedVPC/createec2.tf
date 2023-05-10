@@ -1,5 +1,5 @@
 resource "aws_instance" "Red1" {
-  ami           = "ami-0dda7e535b65b6469"  # Replace with your desired Red Hat AMI ID
+  ami           = "ami-0dda7e535b65b6469"  # Redhat
   instance_type = "t2.micro"  # Replace with your desired instance type
 
   subnet_id = aws_subnet.my_subnet[0].id  # Replace with the ID of the first public subnet
@@ -13,7 +13,7 @@ resource "aws_instance" "Red1" {
 }
 
 resource "aws_instance" "Red2" {
-  ami           = "ami-0dda7e535b65b6469"  # Replace with your desired Red Hat AMI ID
+  ami           = "ami-0dda7e535b65b6469"  # Redhat
   instance_type = "t2.micro"  # Replace with your desired instance type
 
   subnet_id = aws_subnet.my_subnet[1].id  # Replace with the ID of the second public subnet
