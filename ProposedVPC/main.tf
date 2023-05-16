@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_vpc" "my_vpc" {
-  cidr_block = "10.0.0.0/16"  # Replace with your desired CIDR block
+  cidr_block = "10.1.0.0/16"  # Replace with your desired CIDR block
 
   tags = {
     Name = "my-vpc"  # Replace with your desired VPC name
@@ -13,7 +13,7 @@ resource "aws_vpc" "my_vpc" {
 resource "aws_subnet" "my_subnet" {
   count = 2  # Replace with the number of subnets you want to create
 
-  cidr_block = "10.0.${count.index + 1}.0/24"  # Replace with your desired CIDR block for each subnet
+  cidr_block = "10.1.${count.index + 1}.0/24"  # Replace with your desired CIDR block for each subnet
   vpc_id     = aws_vpc.my_vpc.id
 
   tags = {
@@ -22,7 +22,7 @@ resource "aws_subnet" "my_subnet" {
 }
 
 resource "aws_subnet" "my_subnet_3" {
-  cidr_block = "10.0.3.0/24"
+  cidr_block = "10.1.3.0/24"
   vpc_id     = aws_vpc.my_vpc.id
 
   tags = {
@@ -31,7 +31,7 @@ resource "aws_subnet" "my_subnet_3" {
 }
 
 resource "aws_subnet" "my_subnet_4" {
-  cidr_block = "10.0.4.0/24"
+  cidr_block = "10.1.4.0/24"
   vpc_id     = aws_vpc.my_vpc.id
 
   tags = {
