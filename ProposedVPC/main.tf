@@ -121,18 +121,3 @@ resource "aws_route_table_association" "my_rta_4" {
   route_table_id = aws_route_table.priv_rt.id
 }
 
-resource "aws_security_group" "ssh_access" {
-  name_prefix = "ssh_access"
-  vpc_id = "${aws_vpc.my_vpc.id}"
-
-  ingress {
-    from_port = 22
-    to_port   = 22
-    protocol  = "tcp"
-    cidr_blocks = [var.myip] # Will allow all ssh traffic to your devices
-  }
-  
-  tags = {
-    Name = "ssh_access"
-  }
-}
