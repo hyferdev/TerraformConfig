@@ -15,3 +15,7 @@ Added a security group that will allow ssh traffic to every device in your VPC. 
 5/15/2023
 
 Today we modified the security group to only allow traffic from a specified IP address, which is defined in a terraform cloud variable. We also optimized traffic flow by specifying which availability zone the subnets are set up. This also elimanates the ocasional issue with subnets in us-west-2d, as they do not allow t2.micros to be built.
+
+5/22/2023
+
+Our current goal is to set up our 2 web servers with Terraform. As of now it spins up 2 basic RHEL 9 instances that we would like the code to install httpd and be reachable externally on the web. We were able to manually do this and have started working on the script to pass to the devices through user data blocks. We also fixed our security groups and set them to be associated to the devices.Will be finishing up the script soon™.
