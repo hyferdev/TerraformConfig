@@ -19,3 +19,7 @@ Today we modified the security group to only allow traffic from a specified IP a
 5/22/2023
 
 Our current goal is to set up our 2 web servers with Terraform. As of now it spins up 2 basic RHEL 9 instances that we would like the code to install httpd and be reachable externally on the web. We were able to manually do this and have started working on the script to pass to the devices through user data blocks. We also fixed our security groups and set them to be associated to the devices. Will be finishing up the script soon™.
+
+5/24/2023
+
+Initial web server config script complete. Added it to the VMs as user data.
