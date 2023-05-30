@@ -9,19 +9,6 @@ resource "aws_vpc" "my_vpc" {
     Name = "my-vpc"  # Replace with your desired VPC name
   }
 }
-/*
-resource "aws_subnet" "my_subnet" {
-  count = 2  # Replace with the number of subnets you want to create
-
-  cidr_block = "10.1.${count.index + 1}.0/24"  # Replace with your desired CIDR block for each subnet
-  vpc_id     = aws_vpc.my_vpc.id
-  availability_zone = "us-west-2a"
-
-  tags = {
-    Name = "pub-subnet-${count.index + 1}"  # Replace with your desired subnet name
-  }
-}
-*/
 
 resource "aws_subnet" "my_subnet_1" {
   cidr_block = "10.1.1.0/24"
@@ -92,14 +79,6 @@ resource "aws_route" "my_route" {
   destination_cidr_block = "0.0.0.0/0"
   gateway_id = aws_internet_gateway.my_igw.id
 }
-/*
-resource "aws_route_table_association" "my_rta" {
-  count = 2  # Replace with the number of subnets you want to associate with the Route Table
-
-  subnet_id      = aws_subnet.my_subnet[count.index].id
-  route_table_id = aws_route_table.my_rt.id
-}
-*/
 
 resource "aws_route_table_association" "my_rta_1" {
   subnet_id      = aws_subnet.my_subnet_1.id

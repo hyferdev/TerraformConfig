@@ -15,7 +15,6 @@ resource "aws_instance" "Red1" {
     sudo systemctl enable --now httpd
     sudo chmod 777 /var/www/html
     echo -e "<html>\n <body>\n  <h1>Welcome to Desire's Lion Test Site</h1>\n </body>\n</html>" > /var/www/html/index.html
-    touch /Done    
   EOT
 
   tags = { 
@@ -40,7 +39,6 @@ resource "aws_instance" "Red2" {
     sudo systemctl enable --now httpd
     sudo chmod 777 /var/www/html
     echo -e "<html>\n <body>\n  <h1>Welcome to Desire's Tiger Test Site</h1>\n </body>\n</html>" > /var/www/html/index.html
-    touch /Done    
   EOT
 
   tags = { 
