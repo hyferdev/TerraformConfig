@@ -23,3 +23,7 @@ Our current goal is to set up our 2 web servers with Terraform. As of now it spi
 5/24/2023
 
 Initial web server config script complete. Added it to the VMs as user data.
+
+5/29/2023
+
+Added a load balancer to the two web servers and confirmed we can hit the VMs via it's DNS address. We then linked it to our Route 53 hosted zone. We also updated the network diagram to reflect these changes. The hosted zone id is a varriable set in Teerraform cloud so make sure to update yours accordingly. Introducing Kubernetes to this enviornment next week, should be fun =)
