@@ -12,9 +12,10 @@ resource "aws_instance" "Red1" {
     #!/bin/bash
     sudo echo -e "[main]\nenabled=1" > /etc/yum/pluginconf.d/subscription-manager.conf
     sudo yum install httpd -y
+    sudo yum install git -y
     sudo systemctl enable --now httpd
-    sudo chmod 777 /var/www/html
-    echo -e "<html>\n <body>\n  <h1>Welcome to Desire's Lion Test Site</h1>\n </body>\n</html>" > /var/www/html/index.html
+    sudo rm  -rf /var/www/*
+    git clone https://github.com/hyferdev/HyferWebCV.git /var/www/
   EOT
 
   tags = { 
@@ -36,9 +37,10 @@ resource "aws_instance" "Red2" {
     #!/bin/bash
     sudo echo -e "[main]\nenabled=1" > /etc/yum/pluginconf.d/subscription-manager.conf
     sudo yum install httpd -y
+    sudo yum install git -y
     sudo systemctl enable --now httpd
-    sudo chmod 777 /var/www/html
-    echo -e "<html>\n <body>\n  <h1>Welcome to Desire's Tiger Test Site</h1>\n </body>\n</html>" > /var/www/html/index.html
+    sudo rm  -rf /var/www/*
+    git clone https://github.com/hyferdev/HyferWebCV.git /var/www/
   EOT
 
   tags = { 
